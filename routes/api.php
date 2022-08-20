@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\KriteriaController;
+use App\Http\Controllers\API\PaudController;
 use App\Http\Controllers\API\SubKriteriaController;
 use App\Http\Controllers\API\RoleController;
 use App\Http\Controllers\API\UserController;
@@ -41,6 +42,12 @@ Route::get('tes/{id}', [UserController::class, 'show']);
 Route::post('tes/store', [UserController::class, 'store']);
 Route::post('tes/update/{id}', [UserController::class, 'update']);
 Route::get('tes/destroy/{id}', [UserController::class, 'destroy']);
+
+Route::get('paud', [PaudController::class, 'index']);
+Route::get('paud/{id}', [PaudController::class, 'show']);
+Route::post('paud/store', [PaudController::class, 'store']);
+Route::post('paud/update/{id}', [PaudController::class, 'update']);
+Route::get('paud/destroy/{id}', [PaudController::class, 'destroy']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

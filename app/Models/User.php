@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\role', 'id_role');
     }
+
+    public function paud()
+    {
+        return $this->hasOne('App\Models\paud', 'id_user');
+    }
 }
